@@ -1,0 +1,19 @@
+/* Add these styles to your CSS file */
+.team .row {
+    margin: 0 -15px;
+}
+
+.team .col-lg-3 {
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.team__item {
+    height: 400px;
+    margin-bottom: 0;
+}
+
+.team__item__text {
+    padding: 25px 20px;
+    background: rgba(0, 0, 0, 0.7);
+}

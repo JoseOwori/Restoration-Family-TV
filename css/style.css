@@ -2168,3 +2168,12 @@ ol {
     padding: 30px 40px 35px 35px;
   }
 }
+
+.announcement__icon img {
+  width: 36px;
+  height: 36px;
+}
+
+.announcement__item h4 {
+  color: #fff;
+}

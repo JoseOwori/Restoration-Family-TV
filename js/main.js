@@ -179,4 +179,20 @@
         });
     });
 
+    // Live Radio Modal logic
+    $(document).ready(function() {
+        $('#openRadioModal').on('click', function() {
+            $('#radioModal').fadeIn();
+        });
+        $('#closeRadioModal').on('click', function() {
+            $('#radioModal').fadeOut();
+        });
+        // Optional: close modal when clicking outside the modal content
+        $('#radioModal').on('click', function(e) {
+            if (e.target === this) {
+                $(this).fadeOut();
+            }
+        });
+    });
+
 })(jQuery);

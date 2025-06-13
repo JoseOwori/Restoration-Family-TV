@@ -181,16 +181,32 @@
 
     // Live Radio Modal logic
     $(document).ready(function() {
-        $('#openRadioModal').on('click', function() {
-            $('#radioModal').fadeIn();
-        });
-        $('#closeRadioModal').on('click', function() {
-            $('#radioModal').fadeOut();
-        });
-        // Optional: close modal when clicking outside the modal content
-        $('#radioModal').on('click', function(e) {
+        const $radioModal = $('#radioModal');
+        const $openBtn = $('#openRadioModal');
+        const $closeBtn = $('#closeRadioModal');
+
+        function openModal() {
+            $radioModal.fadeIn(300).css('display', 'flex');
+        }
+
+        function closeModal() {
+            $radioModal.fadeOut(300);
+        }
+
+        $openBtn.on('click', openModal);
+        $closeBtn.on('click', closeModal);
+
+        // Close modal when clicking outside
+        $radioModal.on('click', function(e) {
             if (e.target === this) {
-                $(this).fadeOut();
+                closeModal();
+            }
+        });
+
+        // Close modal on escape key
+        $(document).on('keydown', function(e) {
+            if (e.key === 'Escape' && $radioModal.is(':visible')) {
+                closeModal();
             }
         });
     });

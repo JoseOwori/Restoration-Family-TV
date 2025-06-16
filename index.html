@@ -524,15 +524,33 @@
                         <h2 style="color: #fff; text-align: center;">Tune In to Restoration Family Radio Live</h2>
                     </div>
                     <div class="radio-controls">
-                        <button class="live-radio-btn primary-btn" id="openRadioModal">
-                            <i class="fa fa-podcast"></i> Live Radio
+                        <button class="live-radio-btn primary-btn" id="openRadioModal" type="button">
+                            <i class="fa fa-podcast" aria-hidden="true"></i> Live Radio
                         </button>
+                    
                         <div class="radio-player" id="radioPlayer" style="display: none;">
-                            <iframe src="https://restorationradio6.webradiosite.com/player" frameborder="0"
-                                allowfullscreen>
+                            <iframe 
+                                src="https://restorationradio6.webradiosite.com/player" 
+                                frameborder="0" 
+                                allowfullscreen 
+                                title="Live Radio Player"
+                                style="width: 100%; height: 300px; border: none;">
                             </iframe>
-
                         </div>
+                    </div>
+                    
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            const openRadioBtn = document.getElementById('openRadioModal');
+                            const radioPlayer = document.getElementById('radioPlayer');
+                    
+                            openRadioBtn.addEventListener('click', function () {
+                                // Toggle display
+                                radioPlayer.style.display = (radioPlayer.style.display === 'none') ? 'block' : 'none';
+                            });
+                        });
+                    </script>
+                    
                     </div>
                     <!-- Radio Modal -->
                     <div id="radioModal"
